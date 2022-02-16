@@ -1,12 +1,15 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { SingleEntryPlugin } from 'webpack';
+import { AuthService } from './auth.service';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 
 @Controller('auth')
 export class AuthController {
-authService: any;
+    constructor(
+    private authService: AuthService
+    ) {}
 
-@Post('/signup')
+@Post('signup')
 signUp(@Body() authCredentialsDto: AuthCredentialsDto): Promise<void> {
     return this.authService.signUp(authCredentialsDto);
 }
