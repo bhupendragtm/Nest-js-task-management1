@@ -1,10 +1,10 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
-import { UserRepository } from './Users.repository';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './jwt-payload.interface';
+import { UserRepository } from './users.repository';
 
 @Injectable()
 export class AuthService {
@@ -31,4 +31,5 @@ export class AuthService {
         }
 
        }
+    //    async  getUsers(): Promise<User[]> {}
    }

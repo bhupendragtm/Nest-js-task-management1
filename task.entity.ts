@@ -1,4 +1,4 @@
-import { TasksStatus } from 'src/tasks/task-status.enum';
+import { TaskStatus } from 'src/tasks/task-status.enum';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -13,6 +13,6 @@ export class Task {
     description: string;
 
     @Column()
-    status: TasksStatus;
+    status: TaskStatus;
 }
 
