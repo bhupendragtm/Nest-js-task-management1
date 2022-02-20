@@ -30,19 +30,8 @@ export class TasksRepository extends Repository<Task> {
 
   async createTask(createTaskDto: CreateTaskDto, user: User): Promise<Task> {
     const { title, description } = createTaskDto;
-<<<<<<< HEAD:src/tasks/task.repository.ts
     
     const task = await this.create({title, description});
-=======
-
-    const task = this.create({
-      title,
-      description,
-      status: TaskStatus.OPEN,
-      user,
-    });
-
->>>>>>> 7eaf9f80cfc3c9d6b15fabe757d2af1195a574de:src/tasks/tasks.repository.ts
     await this.save(task);
     return task;
   }
