@@ -31,7 +31,7 @@ export class TasksController {
     return this.tasksService.getTasks(filterDto, user);
   }
      
-  @Get('/:id')
+  @Get(':id')
   getTaskById(@Param('id') id: string, @GetUser() user: User): Promise<Task> {
     return this.tasksService.getTaskById(id, user);
   }
